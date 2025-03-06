@@ -17,7 +17,7 @@ app.use(express.json());
 
 // mongoose.connect(process.env.MONGODBURL);
 mongoose.connect(process.env.MONGODBURL, {
-    useNewUrlParser: true,
+    // useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => console.log("Connected to MongoDB"))
