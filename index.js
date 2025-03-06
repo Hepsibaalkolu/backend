@@ -40,19 +40,30 @@ app.get("/getUser", async (req, res) => {
   //     res.status(500).json({ error: "Failed to create user", details: err.message });
   //   }
   // });
+  // app.post("/createUser", async (req, res) => {
+  //   try {
+  //     console.log(req.body); // Add this to check incoming data
+  //     const user = req.body;
+  //     const newUser = new UserModel(user);
+  //     await newUser.save();
+  //     res.status(201).json(newUser);
+  //   } catch (err) {
+  //     console.error(err); // Log the full error
+  //     res.status(500).json({ error: "Failed to create user", details: err.message });
+  //   }
+  // });
   app.post("/createUser", async (req, res) => {
     try {
-      console.log(req.body); // Add this to check incoming data
+      console.log("Request body:", req.body); // To see what data is coming in
       const user = req.body;
       const newUser = new UserModel(user);
       await newUser.save();
       res.status(201).json(newUser);
     } catch (err) {
-      console.error(err); // Log the full error
+      console.error("Error creating user:", err); // Full error details
       res.status(500).json({ error: "Failed to create user", details: err.message });
     }
   });
-  
 
 app.get('/', (req, res) => {
     res.send('Backend is working!');
