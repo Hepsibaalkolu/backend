@@ -9,7 +9,7 @@ const app = express();
 
 // app.use(cors());
 app.use(cors({
-    origin: 'https://frontend4-4wdz.onrender.com/', // Your frontend URL on Render
+    origin: 'https://frontend4-4wdz.onrender.com', // Your frontend URL on Render
     credentials: true
   }));
   
