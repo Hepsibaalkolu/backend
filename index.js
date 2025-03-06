@@ -32,6 +32,10 @@ app.get("/getUser", (req, res) => {
     })
 })
 
+app.get('/', (req, res) => {
+    res.send('Backend is working!');
+  });
+
 app.post("/createUser", async (req,res)=>{
     const user = req.body;
     const newUser = new UserModel(user);
